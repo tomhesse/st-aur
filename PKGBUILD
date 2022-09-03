@@ -1,6 +1,6 @@
 pkgname=st
 pkgver=0.8.5
-pkgrel=2
+pkgrel=3
 pkgdesc="A simple virtual terminal for X"
 url="https://st.suckless.org"
 arch=('i686' 'x86_64')
@@ -9,9 +9,11 @@ options=(zipman)
 depends=('libxft' 'ttf-hack')
 source=(https://dl.suckless.org/st/st-$pkgver.tar.gz
         https://st.suckless.org/patches/scrollback/st-scrollback-ringbuffer-0.8.5.diff
+        https://st.suckless.org/patches/anysize/st-anysize-20220718-baa9357.diff
         config.h)
 sha256sums=('ea6832203ed02ff74182bcb8adaa9ec454c8f989e79232cb859665e2f544ab37'
             'b054f3c4b5a076645aecd927658ae7027a0c4b859cbd0b9a42fab07fdf7cbc77'
+            '78ef0c10f45bdee6824ed0739c6f8b6a88d7aa5723e1e4f8db6ad0829c68a5fa'
             'db2c4688375511982d67944bcacd498befbcfedf59e088e556104cfda10d46ee')
 
 prepare() {
