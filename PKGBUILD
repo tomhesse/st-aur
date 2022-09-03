@@ -22,6 +22,9 @@ prepare() {
   cd "$srcdir/$pkgname-$pkgver"
   cp "$srcdir/config.h" config.h
 
+  # Don't compile terminfo
+  sed -i '/tic -sx st.info/d' Makefile
+
   for patch in "$srcdir"/*.diff; do
     if [ -f "$patch" ]; then
       echo "Applying $(basename "$patch")"
